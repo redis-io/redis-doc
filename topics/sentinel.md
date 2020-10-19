@@ -596,6 +596,11 @@ order to modify the Sentinel configuration, which are covered later.
 * **SENTINEL failover `<master name>`** Force a failover as if the master was not reachable, and without asking for agreement to other Sentinels (however a new version of the configuration will be published so that the other Sentinels will update their configurations).
 * **SENTINEL ckquorum `<master name>`** Check if the current Sentinel configuration is able to reach the quorum needed to failover a master, and the majority needed to authorize the failover. This command should be used in monitoring systems to check if a Sentinel deployment is ok.
 * **SENTINEL flushconfig** Force Sentinel to rewrite its configuration on disk, including the current Sentinel state. Normally Sentinel rewrites the configuration every time something changes in its state (in the context of the subset of the state which is persisted on disk across restart). However sometimes it is possible that the configuration file is lost because of operation errors, disk failures, package upgrade scripts or configuration managers. In those cases a way to to force Sentinel to rewrite the configuration file is handy. This command works even if the previous configuration file is completely missing.
+* **SENTINEL is-master-down-by-addr `<ip>` `<port>` `<current-epoch>` `<runid>`** Check if the master specified by ip:port is down from current Sentinel's point of view.
+* **SENTINEL pending-scripts** Get pending scripts information.
+* **SENTINEL info-cache `<master name>`** Return last cached INFO output from masters and all its replicas.
+* **SENTINEL simulate-failure `(crash-after-election|crash-after-promotion|help)`** Simulate a Sentinel crash.
+* **SENTINEL myid** Show Current Sentinel Id (support from Redis 6.2). 
 
 Reconfiguring Sentinel at Runtime
 ---
