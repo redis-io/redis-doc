@@ -600,7 +600,7 @@ order to modify the Sentinel configuration, which are covered later.
 * **SENTINEL pending-scripts** Get pending scripts information.
 * **SENTINEL info-cache `<master name>`** Return last cached INFO output from masters and all its replicas.
 * **SENTINEL simulate-failure `(crash-after-election|crash-after-promotion|help)`** Simulate a Sentinel crash.
-* **SENTINEL myid** Show Current Sentinel Id.
+* **SENTINEL myid** Show Current Sentinel Id (support from Redis 6.2). 
 
 Reconfiguring Sentinel at Runtime
 ---
